@@ -86,8 +86,7 @@ let data = [
       { text: "o", druh: "předložka" },
       { text: "princezně", druh: "podstatné jméno" }
     ]
-  }
-];
+  },
   {
      veta: "Pes běží na zahradu a štěká",
      slova: [
@@ -109,7 +108,7 @@ let data = [
       { text: "a", druh: "spojka" },
       { text: "spí", druh: "sloveso" }
     ]
-  }
+  },
 {
   veta: "Dítě kreslí obrázek a zpívá",
   slova: [
