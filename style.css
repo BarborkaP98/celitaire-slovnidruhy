@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 #sloupce {
@@ -46,10 +46,10 @@ body {
 }
 
 .karta {
+  display: inline-block; /* 👈 TOTO JE KLÍČOVÉ */
   background: white;
   color: black;
   padding: 6px 10px;
-  margin: 5px;
   border-radius: 8px;
   cursor: pointer;
   user-select: none;
