@@ -1,13 +1,10 @@
-
 let hraVety = [];
 let aktualniIndex = 0;
-let balicek = [];
 let vybranaKarta = null;
 let tazenaKarta = null;
 
-// ✅ DATA (jen 4 slovní druhy)
+// ✅ TVOJE VĚTY (OPRAVENÉ POLE)
 let data = [
-
   {
     veta: "Tatínek vaří večeři",
     slova: [
@@ -91,8 +88,8 @@ let data = [
     ]
   },
   {
-     veta: "Pes běží na zahradu a štěká",
-     slova: [
+    veta: "Pes běží na zahradu a štěká",
+    slova: [
       { text: "Pes", druh: "podstatné jméno" },
       { text: "běží", druh: "sloveso" },
       { text: "na", druh: "předložka" },
@@ -112,47 +109,46 @@ let data = [
       { text: "spí", druh: "sloveso" }
     ]
   },
-{
-  veta: "Dítě kreslí obrázek a zpívá",
-  slova: [
-    { text: "Dítě", druh: "podstatné jméno" },
-    { text: "kreslí", druh: "sloveso" },
-    { text: "obrázek", druh: "podstatné jméno" },
-    { text: "a", druh: "spojka" },
-    { text: "zpívá", druh: "sloveso" }
-  ]
-},
-{
-  veta: "Žák sedí ve třídě a píše",
-  slova: [
-    { text: "Žák", druh: "podstatné jméno" },
-    { text: "sedí", druh: "sloveso" },
-    { text: "ve", druh: "předložka" },
-    { text: "třídě", druh: "podstatné jméno" },
-    { text: "a", druh: "spojka" },
-    { text: "píše", druh: "sloveso" }
-  ]
-},
-{
-  veta: "Kamarádi běží do parku a hrají si",
-  slova: [
-    { text: "Kamarádi", druh: "podstatné jméno" },
-    { text: "běží", druh: "sloveso" },
-    { text: "do", druh: "předložka" },
-    { text: "parku", druh: "podstatné jméno" },
-    { text: "a", druh: "spojka" },
-    { text: "hrají", druh: "sloveso" }
-  ]
-},
-
+  {
+    veta: "Dítě kreslí obrázek a zpívá",
+    slova: [
+      { text: "Dítě", druh: "podstatné jméno" },
+      { text: "kreslí", druh: "sloveso" },
+      { text: "obrázek", druh: "podstatné jméno" },
+      { text: "a", druh: "spojka" },
+      { text: "zpívá", druh: "sloveso" }
+    ]
+  },
+  {
+    veta: "Žák sedí ve třídě a píše",
+    slova: [
+      { text: "Žák", druh: "podstatné jméno" },
+      { text: "sedí", druh: "sloveso" },
+      { text: "ve", druh: "předložka" },
+      { text: "třídě", druh: "podstatné jméno" },
+      { text: "a", druh: "spojka" },
+      { text: "píše", druh: "sloveso" }
+    ]
+  },
+  {
+    veta: "Kamarádi běží do parku a hrají si",
+    slova: [
+      { text: "Kamarádi", druh: "podstatné jméno" },
+      { text: "běží", druh: "sloveso" },
+      { text: "do", druh: "předložka" },
+      { text: "parku", druh: "podstatné jméno" },
+      { text: "a", druh: "spojka" },
+      { text: "hrají", druh: "sloveso" }
+    ]
+  }
 ];
+
 
 // ✅ GENEROVÁNÍ
 function generuj() {
   hraVety = [];
   aktualniIndex = 0;
 
-  // vyber 3 náhodné věty
   while (hraVety.length < 3) {
     let r = data[Math.floor(Math.random() * data.length)];
     if (!hraVety.includes(r)) {
@@ -160,42 +156,8 @@ function generuj() {
     }
   }
 
-  // na začátku nic neukazuj
   document.getElementById("veta").innerText = "";
   document.getElementById("aktualni-karta").innerHTML = "";
-}
-
-
-  // ✅ zobraz první větu
-  document.getElementById("veta").innerText = hraVety[0].veta;
-}
-
-  // ✅ vyber 3 náhodné věty
-  let vybraneVety = [];
-
-  while (vybraneVety.length < 3) {
-    let r = data[Math.floor(Math.random() * data.length)];
-    if (!vybraneVety.includes(r)) {
-      vybraneVety.push(r);
-    }
-  }
-
-  // ✅ zobraz všechny věty nahoře
-  let textVet = vybraneVety.map(v => v.veta).join(". ") + ".";
-  
-
-  // ✅ vytvoř balíček ze všech slov
-  vybraneVety.forEach(v => {
-    v.slova.forEach(s => {
-      balicek.push({
-        text: s.text,
-        vysledek: s.druh
-      });
-    });
-  });
-
-  // ✅ zamíchej
-  balicek.sort(() => Math.random() - 0.5);
 }
 
 // ✅ KARTA
@@ -219,8 +181,7 @@ function vytvorKartu(text, vysledek) {
   return karta;
 }
 
-// ✅ LÍZNUTÍ
-function lizniKartu() {
+// ✅ LÍZNI
 function lizniKartu() {
 
   if (aktualniIndex >= hraVety.length) {
@@ -231,22 +192,17 @@ function lizniKartu() {
 
   let vetaObj = hraVety[aktualniIndex];
 
-  // ✅ zobraz CELÉ zadání (tu jednu větu)
   document.getElementById("veta").innerText = vetaObj.veta;
 
   let zona = document.getElementById("aktualni-karta");
   zona.innerHTML = "";
 
-  // ✅ vytvoř všechny kartičky najednou
   vetaObj.slova.forEach(s => {
     zona.appendChild(vytvorKartu(s.text, s.druh));
   });
 
-  // ✅ posuň na další větu
   aktualniIndex++;
 }
- 
-
 
 // ✅ PŘESUN
 function presun(sloupec, karta) {
@@ -255,10 +211,6 @@ function presun(sloupec, karta) {
 
   if (puvodni && puvodni.classList.contains("sloupec")) {
     karta.remove();
-
-    if (puvodni.querySelectorAll(".karta").length === 0) {
-      puvodni.innerHTML = "";
-    }
   }
 
   if (sloupec.querySelectorAll(".karta").length === 0) {
@@ -272,8 +224,6 @@ function presun(sloupec, karta) {
 
   vybranaKarta = null;
   tazenaKarta = null;
-
-  document.getElementById("aktualni-karta").innerHTML = "";
 }
 
 // ✅ INIT
@@ -299,6 +249,19 @@ document.addEventListener("DOMContentLoaded", () => {
   generuj();
 });
 
+// ✅ NOVÁ HRA
+function novaHra() {
+  document.querySelectorAll(".sloupec").forEach(s => {
+    s.innerHTML = "";
+    s.style.background = "#c8e6c9";
+  });
+
+  document.getElementById("aktualni-karta").innerHTML = "";
+  document.getElementById("veta").innerText = "";
+
+  generuj();
+}
+
 // ✅ KONTROLA
 function zkontroluj() {
   document.querySelectorAll(".sloupec").forEach(sloupec => {
@@ -317,19 +280,6 @@ function zkontroluj() {
       if (k.dataset.v !== v) ok = false;
     });
 
-    sloupec.style.background =
-      ok && karty.length >= 1 ? "green" : "red";
+    sloupec.style.background = ok ? "green" : "red";
   });
-}
-
-// ✅ NOVÁ HRA
-function novaHra() {
-  document.querySelectorAll(".sloupec").forEach(s => {
-    s.innerHTML = "";
-    s.style.background = "#c8e6c9";
-  });
-
-  document.getElementById("aktualni-karta").innerHTML = "";
-
-  generuj();
 }
