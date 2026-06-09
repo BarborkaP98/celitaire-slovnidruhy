@@ -4,6 +4,90 @@ let tazenaKarta = null;
 
 // ✅ DATA (jen 4 slovní druhy)
 let data = [
+
+  {
+    veta: "Tatínek vaří večeři",
+    slova: [
+      { text: "Tatínek", druh: "podstatné jméno" },
+      { text: "vaří", druh: "sloveso" },
+      { text: "večeři", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Oběd jíme u stolu",
+    slova: [
+      { text: "Oběd", druh: "podstatné jméno" },
+      { text: "jíme", druh: "sloveso" },
+      { text: "u", druh: "předložka" },
+      { text: "stolu", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Maminka a tatínek jedou na kole",
+    slova: [
+      { text: "Maminka", druh: "podstatné jméno" },
+      { text: "a", druh: "spojka" },
+      { text: "tatínek", druh: "podstatné jméno" },
+      { text: "jedou", druh: "sloveso" },
+      { text: "na", druh: "předložka" },
+      { text: "kole", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Babička má na zahradě slepice",
+    slova: [
+      { text: "Babička", druh: "podstatné jméno" },
+      { text: "má", druh: "sloveso" },
+      { text: "na", druh: "předložka" },
+      { text: "zahradě", druh: "podstatné jméno" },
+      { text: "slepice", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Dědeček hraje karty",
+    slova: [
+      { text: "Dědeček", druh: "podstatné jméno" },
+      { text: "hraje", druh: "sloveso" },
+      { text: "karty", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Chceš zmrzlinu nebo tříšť",
+    slova: [
+      { text: "Chceš", druh: "sloveso" },
+      { text: "zmrzlinu", druh: "podstatné jméno" },
+      { text: "nebo", druh: "spojka" },
+      { text: "tříšť", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Maminka pracuje na počítači",
+    slova: [
+      { text: "Maminka", druh: "podstatné jméno" },
+      { text: "pracuje", druh: "sloveso" },
+      { text: "na", druh: "předložka" },
+      { text: "počítači", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Miminko spí v postýlce",
+    slova: [
+      { text: "Miminko", druh: "podstatné jméno" },
+      { text: "spí", druh: "sloveso" },
+      { text: "v", druh: "předložka" },
+      { text: "postýlce", druh: "podstatné jméno" }
+    ]
+  },
+  {
+    veta: "Čtu knihu o princezně",
+    slova: [
+      { text: "Čtu", druh: "sloveso" },
+      { text: "knihu", druh: "podstatné jméno" },
+      { text: "o", druh: "předložka" },
+      { text: "princezně", druh: "podstatné jméno" }
+    ]
+  }
+];
   {
     veta: "Pes běží na zahradu a štěká",
     slova: [
@@ -26,6 +110,39 @@ let data = [
       { text: "spí", druh: "sloveso" }
     ]
   }
+{
+  veta: "Dítě kreslí obrázek a zpívá",
+  slova: [
+    { text: "Dítě", druh: "podstatné jméno" },
+    { text: "kreslí", druh: "sloveso" },
+    { text: "obrázek", druh: "podstatné jméno" },
+    { text: "a", druh: "spojka" },
+    { text: "zpívá", druh: "sloveso" }
+  ]
+},
+{
+  veta: "Žák sedí ve třídě a píše",
+  slova: [
+    { text: "Žák", druh: "podstatné jméno" },
+    { text: "sedí", druh: "sloveso" },
+    { text: "ve", druh: "předložka" },
+    { text: "třídě", druh: "podstatné jméno" },
+    { text: "a", druh: "spojka" },
+    { text: "píše", druh: "sloveso" }
+  ]
+},
+{
+  veta: "Kamarádi běží do parku a hrají si",
+  slova: [
+    { text: "Kamarádi", druh: "podstatné jméno" },
+    { text: "běží", druh: "sloveso" },
+    { text: "do", druh: "předložka" },
+    { text: "parku", druh: "podstatné jméno" },
+    { text: "a", druh: "spojka" },
+    { text: "hrají", druh: "sloveso" }
+  ]
+},
+
 ];
 
 // ✅ GENEROVÁNÍ
