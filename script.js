@@ -1,3 +1,6 @@
+
+let hraVety = [];
+let aktualniIndex = 0;
 let balicek = [];
 let vybranaKarta = null;
 let tazenaKarta = null;
@@ -147,6 +150,19 @@ let data = [
 // ✅ GENEROVÁNÍ
 function generuj() {
   balicek = [];
+  hraVety = [];
+  aktualniIndex = 0;
+
+  while (hraVety.length < 3) {
+    let r = data[Math.floor(Math.random() * data.length)];
+    if (!hraVety.includes(r)) {
+      hraVety.push(r);
+    }
+  }
+
+  // ✅ zobraz první větu
+  document.getElementById("veta").innerText = hraVety[0].veta;
+}
 
   // ✅ vyber 3 náhodné věty
   let vybraneVety = [];
@@ -199,18 +215,29 @@ function vytvorKartu(text, vysledek) {
 
 // ✅ LÍZNUTÍ
 function lizniKartu() {
-  let zona = document.getElementById("aktualni-karta");
 
-  if (balicek.length === 0) {
-    zona.innerHTML = "<b>Konec hry ✅</b>";
+  // ✅ když už nejsou další věty
+  if (aktualniIndex >= hraVety.length) {
+    document.getElementById("aktualni-karta").innerHTML = "<b>Konec hry ✅</b>";
     return;
   }
 
-  let k = balicek.pop();
+  let veta = hraVety[aktualniIndex];
 
+  let zona = document.getElementById("aktualni-karta");
   zona.innerHTML = "";
-  zona.appendChild(vytvorKartu(k.text, k.vysledek));
+
+  // ✅ vytvoř karty pro aktuální větu
+  veta.slova.forEach(s => {
+    zona.appendChild(vytvorKartu(s.text, s.druh));
+  });
+
+  // ✅ zobraz větu
+  document.getElementById("veta").innerText = veta.veta;
+
+  aktualniIndex++;
 }
+
 
 // ✅ PŘESUN
 function presun(sloupec, karta) {
