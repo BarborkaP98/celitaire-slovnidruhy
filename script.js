@@ -6,7 +6,7 @@ let tazenaKarta = null;
 // ✅ TVOJE VĚTY (OPRAVENÉ POLE)
 let data = [
   {
-    veta: "Tatínek vaří večeři",
+    veta: "Tatínek vaří večeři.",
     slova: [
       { text: "Tatínek", druh: "podstatné jméno" },
       { text: "vaří", druh: "sloveso" },
@@ -14,7 +14,7 @@ let data = [
     ]
   },
   {
-    veta: "Oběd jíme u stolu",
+    veta: "Oběd jíme u stolu!",
     slova: [
       { text: "Oběd", druh: "podstatné jméno" },
       { text: "jíme", druh: "sloveso" },
@@ -23,7 +23,7 @@ let data = [
     ]
   },
   {
-    veta: "Maminka a tatínek jedou na kole",
+    veta: "Maminka a tatínek jedou na kole.",
     slova: [
       { text: "Maminka", druh: "podstatné jméno" },
       { text: "a", druh: "spojka" },
@@ -34,7 +34,7 @@ let data = [
     ]
   },
   {
-    veta: "Babička má na zahradě slepice",
+    veta: "Babička má na zahradě slepice.",
     slova: [
       { text: "Babička", druh: "podstatné jméno" },
       { text: "má", druh: "sloveso" },
@@ -44,7 +44,7 @@ let data = [
     ]
   },
   {
-    veta: "Dědeček hraje karty",
+    veta: "Dědeček hraje karty.",
     slova: [
       { text: "Dědeček", druh: "podstatné jméno" },
       { text: "hraje", druh: "sloveso" },
@@ -52,7 +52,7 @@ let data = [
     ]
   },
   {
-    veta: "Chceš zmrzlinu nebo tříšť",
+    veta: "Chceš zmrzlinu nebo tříšť?",
     slova: [
       { text: "Chceš", druh: "sloveso" },
       { text: "zmrzlinu", druh: "podstatné jméno" },
@@ -61,7 +61,7 @@ let data = [
     ]
   },
   {
-    veta: "Maminka pracuje na počítači",
+    veta: "Maminka pracuje na počítači.",
     slova: [
       { text: "Maminka", druh: "podstatné jméno" },
       { text: "pracuje", druh: "sloveso" },
@@ -70,7 +70,7 @@ let data = [
     ]
   },
   {
-    veta: "Miminko spí v postýlce",
+    veta: "Miminko spí v postýlce.",
     slova: [
       { text: "Miminko", druh: "podstatné jméno" },
       { text: "spí", druh: "sloveso" },
@@ -79,7 +79,7 @@ let data = [
     ]
   },
   {
-    veta: "Čtu knihu o princezně",
+    veta: "Čtu knihu o princezně.",
     slova: [
       { text: "Čtu", druh: "sloveso" },
       { text: "knihu", druh: "podstatné jméno" },
@@ -88,7 +88,7 @@ let data = [
     ]
   },
   {
-    veta: "Pes běží na zahradu a štěká",
+    veta: "Pes běží na zahradu a štěká.",
     slova: [
       { text: "Pes", druh: "podstatné jméno" },
       { text: "běží", druh: "sloveso" },
@@ -99,7 +99,7 @@ let data = [
     ]
   },
   {
-    veta: "Kočka sedí na stromě a spí",
+    veta: "Kočka sedí na stromě a spí.",
     slova: [
       { text: "Kočka", druh: "podstatné jméno" },
       { text: "sedí", druh: "sloveso" },
@@ -110,7 +110,7 @@ let data = [
     ]
   },
   {
-    veta: "Dítě kreslí obrázek a zpívá",
+    veta: "Dítě kreslí obrázek a zpívá.",
     slova: [
       { text: "Dítě", druh: "podstatné jméno" },
       { text: "kreslí", druh: "sloveso" },
@@ -120,7 +120,7 @@ let data = [
     ]
   },
   {
-    veta: "Žák sedí ve třídě a píše",
+    veta: "Žák sedí ve třídě a píše.",
     slova: [
       { text: "Žák", druh: "podstatné jméno" },
       { text: "sedí", druh: "sloveso" },
@@ -131,7 +131,7 @@ let data = [
     ]
   },
   {
-    veta: "Kamarádi běží do parku a hrají si",
+    veta: "Kamarádi běží do parku a hrají si.",
     slova: [
       { text: "Kamarádi", druh: "podstatné jméno" },
       { text: "běží", druh: "sloveso" },
