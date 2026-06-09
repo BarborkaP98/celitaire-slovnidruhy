@@ -89,8 +89,8 @@ let data = [
   }
 ];
   {
-    veta: "Pes běží na zahradu a štěká",
-    slova: [
+     veta: "Pes běží na zahradu a štěká",
+     slova: [
       { text: "Pes", druh: "podstatné jméno" },
       { text: "běží", druh: "sloveso" },
       { text: "na", druh: "předložka" },
@@ -149,18 +149,31 @@ let data = [
 function generuj() {
   balicek = [];
 
-  let vybrana = data[Math.floor(Math.random() * data.length)];
+  // ✅ vyber 3 náhodné věty
+  let vybraneVety = [];
 
-  // zobraz větu
-  document.getElementById("veta").innerText = vybrana.veta;
+  while (vybraneVety.length < 3) {
+    let r = data[Math.floor(Math.random() * data.length)];
+    if (!vybraneVety.includes(r)) {
+      vybraneVety.push(r);
+    }
+  }
 
-  vybrana.slova.forEach(s => {
-    balicek.push({
-      text: s.text,
-      vysledek: s.druh
+  // ✅ zobraz všechny věty nahoře
+  let textVet = vybraneVety.map(v => v.veta).join(". ") + ".";
+  document.getElementById("veta").innerText = textVet;
+
+  // ✅ vytvoř balíček ze všech slov
+  vybraneVety.forEach(v => {
+    v.slova.forEach(s => {
+      balicek.push({
+        text: s.text,
+        vysledek: s.druh
+      });
     });
   });
 
+  // ✅ zamíchej
   balicek.sort(() => Math.random() - 0.5);
 }
 
